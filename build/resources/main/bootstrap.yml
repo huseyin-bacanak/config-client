@@ -1,9 +1,12 @@
 ---
 spring:
+  application:
+    name: test-application
   cloud:
     config:
-      uri: http://localhost:8888
-  application:
-    name: asd-server
-
-server.port: 8889
+      discovery:
+        enabled: true
+        serviceId: CONFIG-SERVER
+      failFast: true
+encrypt:
+  failOnError: false
